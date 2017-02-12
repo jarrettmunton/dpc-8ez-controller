@@ -1,6 +1,5 @@
 package midiApp.songEditor;
 
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
