@@ -9,3 +9,5 @@ out/
 
 #node 
 node_modules/
+dist/
+packages/
