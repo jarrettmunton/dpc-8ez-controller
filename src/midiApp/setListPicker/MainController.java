@@ -12,15 +12,17 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import midiApp.common.FileUtils;
+import midiApp.common.IgnoreSlot;
 import midiApp.common.SongData;
 import midiApp.midi.MidiSelectorController;
 import midiApp.songEditor.SongEditorController;
 
-
 import java.io.IOException;
 import java.net.URL;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.ResourceBundle;
+import java.util.TreeSet;
 
 public class MainController implements Initializable {
     public TableView<SongData> songs;
@@ -118,6 +120,11 @@ public class MainController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void addIgnoreSlot(ActionEvent actionEvent) {
+        System.out.println("addIgnoreSlot");
+        listView.getItems().add(new IgnoreSlot());
     }
 
     public void add(ActionEvent actionEvent) {

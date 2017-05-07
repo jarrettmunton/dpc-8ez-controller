@@ -2,20 +2,10 @@ package midiApp.midi;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
-import midiApp.common.FileUtils;
 import midiApp.common.SongData;
 
 import javax.sound.midi.MidiDevice;
@@ -26,7 +16,6 @@ import java.net.URL;
 import java.util.*;
 
 public class MidiSelectorController implements Initializable {
-
     List<SongData> songs;
     public TableView<MidiDevice.Info> midiSelector;
 
@@ -82,15 +71,11 @@ public class MidiSelectorController implements Initializable {
         try {
             d.open();
             Receiver r = d.getReceiver();
-            DisasterAreaDPC8EZ dpc = new DisasterAreaDPC8EZ(r);
-            int counter = 0;
-            for (SongData song : songs) {
-                dpc.saveSong(song, counter);
-                counter++;
-            }
+            DisasterAreaDPC8EZSongManager dpc = new DisasterAreaDPC8EZSongManager(r);
+            dpc.saveSongs(songs);
             r.close();
             d.close();
-            System.out.println("Successfully updating."); // todo: display message
+            System.out.println("Successfully updated"); // todo: display message
         } catch (MidiUnavailableException e) {
             System.out.println("Device unavailable"); // todo: display message
         }

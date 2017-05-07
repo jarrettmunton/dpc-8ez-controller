@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import javafx.geometry.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 <AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="midiApp.setListPicker.MainController">
    <children>
        <VBox prefHeight="648.0" prefWidth="547.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -48,6 +45,7 @@
                                        <Button fx:id="remove" mnemonicParsing="false" onAction="#remove" text="-" />
                                        <Button fx:id="up" mnemonicParsing="false" onAction="#up" text="up" />
                                        <Button fx:id="down" mnemonicParsing="false" onAction="#down" text="down" />
+                                       <Button fx:id="addIgnore" mnemonicParsing="false" onAction="#addIgnoreSlot" text="+ ignore slot" />
                                    </items>
                                </ToolBar>
                            </children>

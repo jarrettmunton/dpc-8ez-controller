@@ -15,4 +15,10 @@ public class MidiUtils {
         m.setMessage(ShortMessage.PROGRAM_CHANGE, 0, value, 0);
         return m;
     }
+
+    public static ShortMessage programChange(int value, int channel) throws InvalidMidiDataException {
+        ShortMessage m = new ShortMessage();
+        m.setMessage(ShortMessage.PROGRAM_CHANGE, channel, value, 0);
+        return m;
+    }
 }
