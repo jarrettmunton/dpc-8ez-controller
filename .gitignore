@@ -6,3 +6,8 @@ out/
 
 # Mac
 .DS_Store
+
+#node 
+node_modules/
+dist/
+packages/
